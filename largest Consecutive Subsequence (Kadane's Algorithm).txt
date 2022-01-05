@@ -1,0 +1,20 @@
+12)largest Consecutive Subsequence (Kadane's Algorithm)
+
+class Solution:
+    def findLongestConseqSubseq(self, a,n):
+        
+        a.sort()
+
+        ans = 1
+        count = 1
+
+        for i in range(1, len(a)):#traversing array
+            if a[i] != a[i-1]:#check previous elemet exit or not
+                if a[i] == a[i-1]+1:#check current elemnt is equal to the previous element
+                    count += 1
+                else:
+                    ans = max(ans, count) # update result with the length of curr subsequence
+
+                    curr=1
+
+        return max(ans,count)
