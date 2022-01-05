@@ -1,0 +1,33 @@
+16) rearrange the array positive and negative
+
+class Solution:
+    def rearrange(arr, n):
+    # sort the array
+        arr.sort()
+    # one pointing to the negative number
+    # one pointing to the positive number
+        i, j = 1, 1
+        while i < n:
+            if arr[i] < 0:
+                break
+            i += 1
+        while j < n:
+            if arr[j] > 0:
+                break
+            j += 1
+    # swap the numbers until the given condition gets satisfied
+        while (i<n) and (j < n):
+        # swaping
+            arr[i], arr[j] = arr[j], arr[i]  
+         
+        # increment i by 2
+        # because a negative number is followed by a positive number
+            i += 2     
+            j += 1
+     
+        return(arr)
+   
+    
+    arr = [-5, -2, 5, 2, 4, 7, 1, 8, 0, -8]
+    n=len(arr)
+    print(rearrange(arr, n))
