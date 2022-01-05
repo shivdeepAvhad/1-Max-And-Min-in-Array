@@ -1,0 +1,20 @@
+13) Find the smallest positive integer cannot
+
+def findSmallest(arr, n):
+ 
+    ans = 1 #Initialize result
+    # Traverse the array and increment
+    # 'res' if arr[i] is smaller than
+    # or equal to 'res'.
+    for i in range (0,n):
+        if arr[i] <= ans:
+            ans = ans + arr[i]
+        else:
+            break
+    return ans
+ 
+ 
+# Driver program to test above function
+arr= [1, 10, 3, 11, 6, 15]
+n = len(arr)
+print(findSmallest(arr, n))
