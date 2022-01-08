@@ -1,0 +1,9 @@
+1) string/array reverse
+
+def reverse(string):
+    string = string[-1::-1]
+    return string
+  
+s = "Shivdeep"
+  
+print (reverse(s))

@@ -1,0 +1,14 @@
+8) Armstrong number
+
+num=371
+order=len(str(num))
+sum=0
+num1=num
+while num>0:
+    digit=num%10
+    sum+=digit ** order
+    num=num//10
+if(num1==sum):
+    print("yess")
+else:
+    print("no")

@@ -1,0 +1,21 @@
+7)prime number
+
+def isPrime(n):  #for THE GFG Top ''from math import sqrt
+ 
+    # Corner case
+    if (n <= 1):
+        return False
+ 
+    # Check from 2 to sqrt(n)
+    for i in range(2, n):   #GFG ''for i in range(2,int(sqrt(N))+1):
+        if (n % i == 0):
+            return False
+ 
+    return True
+ 
+ 
+# Driver Code
+if isPrime(0):
+    print("true")
+else:
+    print("false")

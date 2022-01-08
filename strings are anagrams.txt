@@ -1,0 +1,13 @@
+strings are anagrams
+
+def isAnagram(a,b):
+    str_s1=sorted(a)
+    str_s2=sorted(b)
+    if(str_s1 == str_s2):
+        return "YES"
+    else:
+	    return "NO"	
+	
+a="b"
+b="d"
+print(isAnagram(a,b))

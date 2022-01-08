@@ -1,0 +1,8 @@
+-Check whether a String is Palindrome or not
+
+a=input("enter string->")
+b=a[-1::-1]
+if(a==b):
+    print("yes")
+else:
+    print("No")

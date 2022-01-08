@@ -1,0 +1,30 @@
+strings are rotations of each other or not
+
+ def areRotations(s1, s2):
+	n1 = len(s1)
+	n2 = len(s2)
+	temp = ''
+
+	# Check if sizes of two strings are same
+	if n1 != n2:
+		return 0
+
+	# Create a temp string with value str1.str1
+	temp = s1 + s1
+
+	# Now check if str2 is a substring of temp
+	# string.count returns the number of occurrences of
+	# the second string in temp
+	if (temp.count(s2)> 0):
+		return 1
+	else:
+		return 0
+     #for GFG upto this code important
+# Driver program to test the above function
+s1 = "ABCD"
+s2 = "ABCD"
+
+if areRotations(s1, s2):
+	print ("Strings are rotations of each other")
+else:
+	print ("Strings are not rotations of each other")
