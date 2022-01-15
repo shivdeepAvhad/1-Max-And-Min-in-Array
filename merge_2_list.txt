@@ -1,0 +1,34 @@
+struct Node SortedMerge(struct Node a, struct Node b)
+{
+     a dummy first node to hang the result on 
+    struct Node dummy;
+ 
+     tail points to the last result node  
+    struct Node tail = &dummy;
+ 
+     so tail-next is the place to add new nodes
+      to the result. 
+    dummy.next = NULL;
+    while (1)
+    {
+        if (a == NULL)
+        {
+             if either list runs out, use the
+               other list 
+            tail-next = b;
+            break;
+        }
+        else if (b == NULL)
+        {
+            tail-next = a;
+            break;
+        }
+        if (a-data = b-data)
+            MoveNode(&(tail-next), &a);
+        else
+            MoveNode(&(tail-next), &b);
+ 
+        tail = tail-next;
+    }
+    return(dummy.next);
+}
