@@ -1,0 +1,12 @@
+findSum(Struct node* root , int cur_sum,int sum , bool is_found)
+{
+if(root == NULL)
+return;
+
+cur_sum = Cur_sum + root->data;
+if(root->left == NULL && root->right == NULL && cur_sum == sum)
+is_found = true;
+
+findSum(root->left , cur_sum , sum, is_found);
+findSum(root->right , cur_sum , sum, is_found);
+}
