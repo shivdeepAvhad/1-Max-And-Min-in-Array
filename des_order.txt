@@ -1,0 +1,32 @@
+def sortedMerge(a, b, res, n, m):
+    # Concatenate two arrays
+    i, j, k = 0, 0, 0
+    while (i < n):
+        res[i] = a[i]
+        i += 1
+        k += 1
+    while (j < m):
+        res[k] = b[j]
+        j += 1
+        k += 1
+    
+   
+    # sorting the res array
+   # res.sort(reverse=True)
+
+
+# Driver code
+a = [ 1,2,3,4]
+b = [ 10,9,8,7]
+n = len(a)
+m = len(b)
+
+# Final merge list
+res = [0 for i in range(n + m)]
+sortedMerge(a, b, res, n, m)
+res.sort(reverse=True)
+print ("Sorted merged list :")
+for i in range(n + m):
+    print(res[i])
+
+    

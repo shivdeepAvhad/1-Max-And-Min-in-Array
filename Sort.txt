@@ -1,0 +1,163 @@
+1) Quick Sort
+
+procedure quickSort(left, right)
+
+   if right-left <= 0   //Make the right-most index value pivot
+      return
+   else     
+      pivot = A[right]
+      partition = partitionFunc(left, right, pivot) //partition the array using pivot value
+      quickSort(left,partition-1)  // quicksort left partition
+      quickSort(partition+1,right)  // right
+   end if		
+   
+end procedure
+----------
+function partitionFunc(left, right, pivot)
+   leftPointer = left
+   rightPointer = right - 1
+
+   while True do
+      while A[++leftPointer] < pivot do
+         //do-nothing            
+      end while
+		
+      while rightPointer > 0 && A[--rightPointer] > pivot do
+         //do-nothing         
+      end while
+		
+      if leftPointer >= rightPointer
+         break
+      else                
+         swap leftPointer,rightPointer
+      end if
+		
+   end while 
+	
+   swap leftPointer,right
+   return leftPointer
+
+===============================================
+2) Bubble Sort
+
+begin BubbleSort(list)
+
+   for all elements of list
+      if list[i] > list[i+1]
+         swap(list[i], list[i+1])
+      end if
+   end for
+   
+   return list
+   
+end BubbleSort
+------
+procedure bubbleSort( list : array of items )
+
+   loop = list.count;
+   
+   for i = 0 to loop-1 do:
+      swapped = false
+		
+      for j = 0 to loop-1 do:
+      
+         /* compare the adjacent elements */   
+         if list[j] > list[j+1] then
+            /* swap them */
+            swap( list[j], list[j+1] )		 
+            swapped = true
+         end if
+         
+      end for
+      
+      /*if no number was swapped that means 
+      array is sorted now, break the loop.*/
+      
+      if(not swapped) then
+         break
+      end if
+      
+   end for
+   
+end procedure return list
+===================================================
+3) Merge Sort
+
+MERGE_SORT(arr, l, h)  
+  
+if l < h  
+set mid = (1 + h)/2  
+MERGE_SORT(arr, l, mid)  
+MERGE_SORT(arr, mid + 1, h)  
+MERGE (arr, l, mid, h)  
+end of if  
+  
+END MERGE_SORT  
+
+---------------------
+void merge(int a[], int beg, int mid, int end)    
+{    
+    int i, j, k;  
+    int n1 = mid - beg + 1;    
+    int n2 = end - mid;    
+      
+    int LeftArray[n1], RightArray[n2]; //temporary arrays  
+      
+    /* copy data to temp arrays */  
+    for (int i = 0; i < n1; i++)    
+    LeftArray[i] = a[beg + i];    
+    for (int j = 0; j < n2; j++)    
+    RightArray[j] = a[mid + 1 + j];    
+      
+    i = 0, /* initial index of first sub-array */  
+    j = 0; /* initial index of second sub-array */   
+    k = beg;  /* initial index of merged sub-array */  
+      
+    while (i < n1 && j < n2)    
+    {    
+        if(LeftArray[i] <= RightArray[j])    
+        {    
+            a[k] = LeftArray[i];    
+            i++;    
+        }    
+        else    
+        {    
+            a[k] = RightArray[j];    
+            j++;    
+        }    
+        k++;    
+    }    
+    while (i<n1)    
+    {    
+        a[k] = LeftArray[i];    
+        i++;    
+        k++;    
+    }    
+      
+    while (j<n2)    
+    {    
+        a[k] = RightArray[j];    
+        j++;    
+        k++;    
+    }    
+}   
+
+=========================================================
+
+Insertion Sort
+
+void insert(int a[], int n) /* function to sort an aay with insertion sort */  
+{  
+    int i, j, temp;  
+    for (i = 1; i < n; i++) {  
+        temp = a[i];  
+        j = i - 1;  
+  
+        while(j>=0 && temp <= a[j])  /* Move the elements greater than temp to one position ahead from their current position*/  
+        {    
+            a[j+1] = a[j];     
+            j = j-1;    
+        }    
+        a[j+1] = temp;    
+    }  
+}   
